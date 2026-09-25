@@ -17,7 +17,8 @@
 
         <div class="main">
             <div class="input">
-                <input id="entrada" type="text" placeholder="Digite a cidade " required>
+                <label for="entrada"><i class="fa-solid fa-location-dot"></i></label>
+                <input id="entrada" type="text"  placeholder="Digite a cidade " required>
                 <button id="btn-buscar" onclick="buscar()"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
 
@@ -31,7 +32,7 @@
             <div class="down">
                 <h2 class="date"> 23-Setembro-2026</h2>
                 <h2 class="time"> Quarta-feira, 17:44 PM </h2>
-                <h2 class="time-of-day"> Dia</h2>
+                <h2 class="country">AO</h2>
 
                 <h1 class="city">Luanda</h1>
 
@@ -47,17 +48,17 @@
             <div class="other-info">
                 <div class="items veloc">
                     <p>Wind</p>
-                    <h2> <span>6</span> km/h</h2>
+                    <h2> <span id="veloc">6</span> m/s</h2>
                     <p> East </p>
 
                 </div>
                 <div class="items hum">
                     <p>Humadity</p>
-                    <h2><span>69</span>%</h2>
+                    <h2><span id="humad">69</span>%</h2>
                 </div>
                 <div class="items sens">
                     <p>Real Feel</p>
-                    <h2><span>31</span>°C</h2>
+                    <h2><span id="tem-fell">31</span>°C</h2>
 
                 </div>
                 <div class="items index">
@@ -67,7 +68,7 @@
                 </div>
                 <div class="items pres">
                     <p> Pressure </p>
-                    <h2><span>1000</span> mb</h2>
+                    <h2><span id="pressure">1000</span> mb</h2>
                 </div>
                 <div class="items rain">
                     <p> Change of rain </p>
@@ -75,8 +76,8 @@
                 </div>
                 <div class="items TemMax-TemMin">
                     <p> Temperature History </p>
-                    <h2> <i class="fa-solid fa-arrow-up-long"></i> <span>31°C</span></h2>
-                    <h2> <i class="fa-solid fa-arrow-down-long"></i> <span>31°C</span></h2>
+                    <h2> <i class="fa-solid fa-arrow-up-long"></i> <span id="up">31</span>°C</h2>
+                    <h2> <i class="fa-solid fa-arrow-down-long"></i> <span id="down">31</span>°C</h2>
                 </div>
                 <div class="items Sun">
                     <p> Sun </p>
