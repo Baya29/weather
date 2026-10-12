@@ -15,6 +15,7 @@ async function buscar() {
     const Down = document.querySelector('#down');
     const Country = document.querySelector('.country');
 
+
     const City_Name = Input.value;
     /* console.log(City_Name); */
 
@@ -27,7 +28,7 @@ async function buscar() {
 
 
     temP.innerHTML = Math.floor(json.main.temp);
-    Name.innerHTML =  json.name; 
+    Name.innerHTML = json.name;
     Sky.innerHTML = json.weather[0].description;
     Veloc.innerHTML = json.wind.speed;
     Humad.innerHTML = json.main.humidity;
@@ -36,8 +37,31 @@ async function buscar() {
     Up.innerHTML = json.main.temp_max;
     Down.innerHTML = json.main.temp_min;
     Country.innerHTML = json.sys.country;
-    
+    const iconCode = json.weather[0].icon;
+    document.querySelector('.iconURL').src =
+        `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
+    
+   const localTime = new Date(
+    Date.now() + json.timezone * 1000
+);
+
+    document.querySelector('.date').textContent =
+        localTime.toLocaleDateString("pt-PT", {
+            timeZone: "UTC",
+            day: "2-digit",
+            month: "long",
+            year: "numeric"
+        });
+
+    document.querySelector('.time').textContent =
+        localTime.toLocaleTimeString("pt-PT", {
+            timeZone: "UTC",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit"
+        });
 
 
 }
+Btn.addEventListener("click", buscar);
